@@ -26,7 +26,6 @@
 </head>
 
 <body>
-<!-- 头部导航栏部分  start -->
 <%
   TypeImpl _ti = new TypeImpl();
   GoodsImpl gi = new GoodsImpl();
@@ -61,14 +60,14 @@
   </div>
   <!-- 新品专区  P005-->
   <div class="home-module home-colorful" id="1">
-    <%=goodsi.toString()%>
+<%--    <%=goodsi.toString()%>--%>
     <h4 class="home-module-title">
       新品
       <span>/</span>
       <span>专区</span>
     </h4>
     <div class="colorful-top-banner">
-      <a href="#" target="_blank">
+      <a href="${pageContext.request.contextPath}/advanced?partitionid=P005&typeid=&search=" target="_blank">
         <img src="img/menu-top-1.jpg" alt="">
       </a>
     </div>
@@ -109,7 +108,7 @@
       <span>专区</span>
     </h4>
     <div class="colorful-top-banner">
-      <a href="#" target="_blank">
+      <a href="${pageContext.request.contextPath}/advanced?partitionid=P002&typeid=&search=" target="_blank">
         <img src="img/menu-top-2.jpg" alt="">
       </a>
     </div>
@@ -152,7 +151,7 @@
       <span>专区</span>
     </h4>
     <div class="colorful-top-banner">
-      <a href="#" target="_blank">
+      <a href="${pageContext.request.contextPath}/advanced?partitionid=P004&typeid=&search=" target="_blank">
         <img src="img/menu-top-3.jpg" alt="">
       </a>
     </div>
@@ -194,7 +193,7 @@
       <span>专区</span>
     </h4>
     <div class="colorful-top-banner">
-      <a href="#" target="_blank">
+      <a href="${pageContext.request.contextPath}/advanced?partitionid=P003&typeid=&search=" target="_blank">
         <img src="img/menu-top-4.jpg" alt="">
       </a>
     </div>

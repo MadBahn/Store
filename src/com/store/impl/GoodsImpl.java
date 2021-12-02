@@ -79,6 +79,42 @@ public class GoodsImpl implements GoodsDAO {
 
     @Override
     public List<Goods> queryByType(String type_id) {
+        String sql = "SELECT * FROM goods WHERE type_id = ?";
+        try {
+            return qr.query(sql,new BeanListHandler<Goods>(Goods.class),type_id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public List<Goods> queryByPartition(String partition_id) {
+        String sql = "SELECT * FROM goods WHERE partition_id = ?";
+        try {
+            return qr.query(sql,new BeanListHandler<Goods>(Goods.class),partition_id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public List<Goods> advancedQuery(String type_id, String partition_id,String index) {
+        index = index == null ? "" : index;
+        type_id = type_id == null ? "" : type_id;
+        partition_id = partition_id == null ? "" : partition_id;
+
+        index = "%"+index+"%";
+        type_id = "%"+type_id+"%";
+        partition_id = "%"+partition_id+"%";
+
+        String sql = "SELECT * FROM goods WHERE partition_id like ? and type_id like ? and goods_name like ?";
+        try {
+            return qr.query(sql,new BeanListHandler<Goods>(Goods.class),partition_id,type_id,index);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 

@@ -18,16 +18,12 @@
         </div>
         <ul class="nav">
             <li><a href="index.jsp" target="_blank">首页</a></li>
-<%--            <%for(Type item: typei){%>--%>
-<%--            <li><a href="class.jsp"><%=item.getType_name()%></a></li>--%>
-<%--            <%}%>--%>
-<%--            <li>--%>
-<%--                <form action="search" method="post">--%>
-<%--                    <input name="search" type="text" style="width: 120px" placeholder="请输入商品关键字">--%>
-<%--                    <input value="检索" type="submit"/>--%>
-<%--                </form>--%>
-<%--            </li>--%>
-            <li><a href="class.jsp" target="_blank">商品</a></li>
+            <li><a href="class.jsp" target="_blank">全部</a></li>
+            <%for(Type item: typei){%>
+            <li><a href="${pageContext.request.contextPath}/advanced?typeid=<%=item.getType_id()%>&partitionid=&search="  target="_blank">
+                <%=item.getType_name()%>
+            </a></li>
+            <%}%>
         </ul>
         <ul class="join">
             <li><a href="login.html">登录</a>/<a href="register.html">注册</a></li>
