@@ -6,9 +6,10 @@
       <root url="jar://$PROJECT_DIR$/libs/commons-fileupload-1.2.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/libs/commons-io-1.4.jar!/" />
       <root url="jar://$PROJECT_DIR$/libs/commons-logging-1.1.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/libs/jstl.jar!/" />
       <root url="jar://$PROJECT_DIR$/libs/mchange-commons-0.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/libs/standard.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/jakarta.servlet.jsp.jstl-2.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/jakarta.servlet.jsp.jstl-api-2.0.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

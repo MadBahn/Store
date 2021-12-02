@@ -6,8 +6,9 @@ import java.util.List;
 
 public interface GoodsDAO {
     List<Goods> query();
-    void add();
-    void del(int id);
+    void add(Goods goods);
+    void del(String id);
     List<Goods> findByIndex(String index);
-    void update(int id);
+    void update(Goods goods);
+    List<Goods> queryByType(String type_id);
 }

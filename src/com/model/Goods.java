@@ -4,21 +4,31 @@ public class Goods {
     public String goods_id;
     public String goods_name;
     public String goods_price;
+    public String goods_info;
     public int goods_stock;
     public String goods_photourl;
     public String partition_id;
     public String type_id;
 
+    public String getGoods_info() {
+        return goods_info;
+    }
+
+    public void setGoods_info(String goods_info) {
+        this.goods_info = goods_info;
+    }
+
     @Override
     public String toString() {
-        return "商品{" +
-                "id='" + goods_id + '\'' +
-                ", name='" + goods_name + '\'' +
-                ", price='" + goods_price + '\'' +
-                ", stock=" + goods_stock +
-                ", pic_url='" + goods_photourl + '\'' +
-                ", p_id='" + partition_id + '\'' +
-                ", t_id='" + type_id + '\'' +
+        return "Goods{" +
+                "goods_id='" + goods_id + '\'' +
+                ", goods_name='" + goods_name + '\'' +
+                ", goods_price='" + goods_price + '\'' +
+                ", goods_info='" + goods_info + '\'' +
+                ", goods_stock=" + goods_stock +
+                ", goods_photourl='" + goods_photourl + '\'' +
+                ", partition_id='" + partition_id + '\'' +
+                ", type_id='" + type_id + '\'' +
                 '}';
     }
 
