@@ -91,7 +91,7 @@
             </a>
             <div class="cart-info">
               <span class="spec">¥<%=item.getGoods_price()%></span>
-              <a href="#" class="add-cart">加入购物车</a>
+              <a href="${pageContext.request.contextPath}/addCart?goodid=<%=item.getGoods_id()%>&goodname=<%=item.getGoods_name()%>" class="add-cart">加入购物车</a>
             </div>
           </li>
           <%}
@@ -134,7 +134,7 @@
             </a>
             <div class="cart-info">
               <span class="spec">¥<%=item.getGoods_price()%></span>
-              <a href="#" class="add-cart">加入购物车</a>
+              <a href="${pageContext.request.contextPath}/addCart?goodid=<%=item.getGoods_id()%>&goodname=<%=item.getGoods_name()%>" class="add-cart">加入购物车</a>
             </div>
           </li>
           <%}
@@ -176,7 +176,7 @@
             </a>
             <div class="cart-info">
               <span class="spec">¥<%=item.getGoods_price()%></span>
-              <a href="#" class="add-cart">加入购物车</a>
+              <a href="${pageContext.request.contextPath}/addCart?goodid=<%=item.getGoods_id()%>&goodname=<%=item.getGoods_name()%>" class="add-cart">加入购物车</a>
             </div>
           </li>
           <%}
@@ -218,7 +218,7 @@
             </a>
             <div class="cart-info">
               <span class="spec">¥<%=item.getGoods_price()%></span>
-              <a href="#" class="add-cart">加入购物车</a>
+              <a href="${pageContext.request.contextPath}/addCart?goodid=<%=item.getGoods_id()%>&goodname=<%=item.getGoods_name()%>" class="add-cart">加入购物车</a>
             </div>
           </li>
           <%}

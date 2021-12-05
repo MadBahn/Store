@@ -3,7 +3,8 @@
 <%@ page import="com.store.impl.GoodsImpl" %>
 <%@ page import="com.store.impl.PartitionImpl" %>
 <%@ page import="com.model.Goods" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="com.model.User" %><%--
   Created by IntelliJ IDEA.
   User: Lenovo
   Date: 2021/12/2
@@ -26,9 +27,21 @@
             <%}%>
         </ul>
         <ul class="join">
-            <li><a href="login.html">登录</a>/<a href="register.html">注册</a></li>
+            <%
+                User useri = (User) session.getAttribute("USER");
+                if(useri!=null){
+            %>
+            <li><b style="TEXT-ALIGN: right;font-size: 15px;font-weight:15;color: cornflowerblue;">欢迎:
+                &nbsp;&nbsp;&nbsp;
+                <%=useri.getUser_name() == null?"用户"+useri.getUser_id():useri.getUser_name()%></b>
+                &nbsp;&nbsp;&nbsp;<a href="user_self_manage.jsp">管理</a>
+                &nbsp;&nbsp;&nbsp;<a href="logout.jsp">退出</a></li>
             <li class="cart">
-                <a href="cart.html"><i></i></a></li>
+                <a href="cart.jsp"><i></i></a></li>
+            <%}else{%>
+            <li><a href="login.jsp">登录</a>/<a href="register.jsp">注册</a></li>
+            <%}%>
+
         </ul>
     </div>
 </header>

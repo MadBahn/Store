@@ -62,16 +62,20 @@ public class GoodsImpl implements GoodsDAO {
         return null;
     }
 
+
+
     @Override
     public void update(Goods goods) {
         String sql = "UPDATE goods SET goods_name=?," +
                 "goods_price=?,goods_stock=?,goods_photourl=?," +
-                "partition_id=?,type_id=? WHERE goods_id =?";
+                "goods_info = ?,partition_id=?," +
+                "type_id=? WHERE goods_id =?";
         try {
             qr.update(sql,goods.getGoods_name(),
                     goods.getGoods_price(),goods.getGoods_stock(),
-                    goods.getGoods_photourl(),goods.getPartition_id(),
-                    goods.getType_id());
+                    goods.getGoods_photourl(),goods.getGoods_info(),
+                    goods.getPartition_id(),
+                    goods.getType_id(),goods.getGoods_id());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -112,6 +116,18 @@ public class GoodsImpl implements GoodsDAO {
         String sql = "SELECT * FROM goods WHERE partition_id like ? and type_id like ? and goods_name like ?";
         try {
             return qr.query(sql,new BeanListHandler<Goods>(Goods.class),partition_id,type_id,index);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public List<Goods> editGoods(String index) {
+        index = index == null ? "":index;
+        String sql = "SELECT * FROM goods WHERE goods_id = ?";
+        try {
+            return qr.query(sql, new BeanListHandler<Goods>(Goods.class),index);
         } catch (SQLException e) {
             e.printStackTrace();
         }

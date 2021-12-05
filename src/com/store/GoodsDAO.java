@@ -13,4 +13,5 @@ public interface GoodsDAO {
     List<Goods> queryByType(String type_id);
     List<Goods> queryByPartition(String partition_id);
     List<Goods> advancedQuery(String type_id, String partition_id,String index);
+    List<Goods> editGoods(String index);
 }

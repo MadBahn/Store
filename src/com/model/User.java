@@ -1,112 +1,89 @@
 package com.model;
 
 public class User {
-    public String id;
-    public String pwd;
-    public String _name;
-    public String sex;
-    public String address;
-    public String phone;
-    public String email;
+    public String user_id;
+    public String user_password;
+    public String user_name;
+    public String user_sex;
+    public String user_address;
+    public String user_phone;
+    public String user_email;
+    public String user_birthday;
 
-    public User(String id, String pwd) {
-        this.id = id;
-        this.pwd = pwd;
+    public String getUser_birthday() {
+        return user_birthday;
     }
 
-    public User(String id, String pwd, String _name) {
-        this.id = id;
-        this.pwd = pwd;
-        this._name = _name;
+    public void setUser_birthday(String user_birthday) {
+        this.user_birthday = user_birthday;
     }
 
-    public User(String id, String pwd, String _name, String sex) {
-        this.id = id;
-        this.pwd = pwd;
-        this._name = _name;
-        this.sex = sex;
+    public String getUser_id() {
+        return user_id;
     }
 
-    public User(String id, String pwd, String _name, String sex, String address) {
-        this.id = id;
-        this.pwd = pwd;
-        this._name = _name;
-        this.sex = sex;
-        this.address = address;
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
     }
 
-    public User(String id, String pwd, String _name, String sex, String address, String phone) {
-        this.id = id;
-        this.pwd = pwd;
-        this._name = _name;
-        this.sex = sex;
-        this.address = address;
-        this.phone = phone;
+    public String getUser_password() {
+        return user_password;
     }
 
-    public User(String id, String pwd, String _name, String sex, String address, String phone, String email) {
-        this.id = id;
-        this.pwd = pwd;
-        this._name = _name;
-        this.sex = sex;
-        this.address = address;
-        this.phone = phone;
-        this.email = email;
+    public void setUser_password(String user_password) {
+        this.user_password = user_password;
     }
 
-    public String getId() {
-        return id;
+    public String getUser_name() {
+        return user_name;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
     }
 
-    public String getPwd() {
-        return pwd;
+    public String getUser_sex() {
+        return user_sex;
     }
 
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
+    public void setUser_sex(String user_sex) {
+        this.user_sex = user_sex;
     }
 
-    public String get_name() {
-        return _name;
+    public String getUser_address() {
+        return user_address;
     }
 
-    public void set_name(String _name) {
-        this._name = _name;
+    public void setUser_address(String user_address) {
+        this.user_address = user_address;
     }
 
-    public String getSex() {
-        return sex;
+    public String getUser_phone() {
+        return user_phone;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setUser_phone(String user_phone) {
+        this.user_phone = user_phone;
     }
 
-    public String getAddress() {
-        return address;
+    public String getUser_email() {
+        return user_email;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setUser_email(String user_email) {
+        this.user_email = user_email;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    @Override
+    public String toString() {
+        return "User{" +
+                "user_id='" + user_id + '\'' +
+                ", user_password='" + user_password + '\'' +
+                ", user_name='" + user_name + '\'' +
+                ", user_sex='" + user_sex + '\'' +
+                ", user_address='" + user_address + '\'' +
+                ", user_phone='" + user_phone + '\'' +
+                ", user_email='" + user_email + '\'' +
+                '}';
     }
 }

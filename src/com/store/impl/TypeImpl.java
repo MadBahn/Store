@@ -6,6 +6,7 @@ import com.store.TypeDAO;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class TypeImpl implements TypeDAO {
@@ -33,6 +34,12 @@ public class TypeImpl implements TypeDAO {
 
     @Override
     public List<Type> findByIndex(String index) {
+        String sql = "SELECT * FROM type WHERE type_id = ?";
+        try {
+            return qr.query(sql,new BeanListHandler<Type>(Type.class),index);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 

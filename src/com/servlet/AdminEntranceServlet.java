@@ -6,16 +6,11 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 
-@WebServlet(name = "TypeServlet", value = "/type")
-public class TypeServlet extends HttpServlet {
+@WebServlet(name = "AdminEntranceServlet", value = "/sys")
+public class AdminEntranceServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("utf-8");
-        String item = request.getParameter("typeid");
-        System.out.println(item);
-        request.setAttribute("action","type");
-        request.setAttribute("typeindex",item);
-        request.getRequestDispatcher("class.jsp").forward(request, response);
+        request.getRequestDispatcher("./sys/sys_login.jsp").forward(request,response);
     }
 
     @Override

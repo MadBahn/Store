@@ -123,7 +123,7 @@
                         <div class="label-entrance">
                             <a href="#"><%=p.getPartition_name()%></a>
                         </div>
-                        <a href="" class="pro-list-addcart">
+                        <a href="${pageContext.request.contextPath}/addCart?goodid=<%=item.getGoods_id()%>&goodname=<%=item.getGoods_name()%>" class="pro-list-addcart">
                             <i></i> 加入购物车
                         </a>
                         <div class="label">
