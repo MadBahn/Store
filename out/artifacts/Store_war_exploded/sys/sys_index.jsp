@@ -21,6 +21,10 @@
     <a href="sys_index.jsp">商品</a><a href="sys_order_manage.jsp">订单</a>
     <h1>商品管理</h1>
     <%
+        if(request.getSession().getAttribute("admin?")==null){
+            response.sendRedirect("../sys");
+        }
+
         GoodsImpl gi = new GoodsImpl();
         PartitionImpl pi = new PartitionImpl();
         TypeImpl ti = new TypeImpl();

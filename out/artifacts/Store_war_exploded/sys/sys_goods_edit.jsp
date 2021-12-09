@@ -18,6 +18,10 @@
 </head>
 <body>
 <%
+    if(request.getSession().getAttribute("admin?")==null){
+        response.sendRedirect("/sys");
+    }
+
     GoodsImpl gi = new GoodsImpl();
     String id = request.getParameter("id");
     Goods gr = gi.editGoods(request.getParameter("id")).get(0);

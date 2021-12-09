@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Lenovo
-  Date: 2021/12/4
-  Time: 16:09
+  Date: 2021/12/6
+  Time: 8:30
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -20,33 +20,27 @@
     TypeImpl _ti = new TypeImpl();
     List<Type> typei = _ti.query();
 %>
-    <%@include file="common/navbar.jsp"%>
+<%@include file="common/navbar.jsp"%>
 <%
     if(useri == null){
         response.sendRedirect("login.jsp");
     }else{%>
 <div class="class-content-box" style="min-height: 216px;">
+    <h>账号修改</h>
     <a href="index.jsp">返回主页</a>
-    <br><br>
-    <h>密码修改</h>
-    <form action="mo_pwd" method="post">
-        <input type="hidden" value="<%=useri.getUser_id()%>">
-        原密码：
-        <input name="password" type="password"/>
+    <form action="" method="post">
+        当前账号：
+        <input name="id" value=""/>
         <br />
-        新密码：
-        <input name="n_password" type="password"/>
+        新账号：
+        <input name="n_id" type="password"/>
         <br />
-        确认密码：
-        <input name="c_n_password" type="password"/>
-        <br />
-        <%=request.getAttribute("error")==null?"":request.getAttribute("error")%>
-        <br>
         <input type="submit" value="确定">
     </form>
 </div>
 <%}%>
 
-    <%@include file="common/footer.jsp"%>
+<%@include file="common/footer.jsp"%>
 </body>
 </html>
+

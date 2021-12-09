@@ -23,6 +23,7 @@ public class AdminLoginServlet extends HttpServlet {
 
 //       FOR DEBUG
         if(admin.equals("admin")&&pwd.equals("123456")){
+            request.getSession().setAttribute("admin?","y");
             response.sendRedirect("./sys/sys_index.jsp");
         }else{
             request.setAttribute("error","用户名或密码错误");

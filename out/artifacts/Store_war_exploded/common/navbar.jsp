@@ -35,9 +35,11 @@
                 &nbsp;&nbsp;&nbsp;
                 <%=useri.getUser_name() == null?"用户"+useri.getUser_id():useri.getUser_name()%></b>
                 &nbsp;&nbsp;&nbsp;<a href="user_self_manage.jsp">管理</a>
+                <a href="user_cart_process.jsp">订单</a>
                 &nbsp;&nbsp;&nbsp;<a href="logout.jsp">退出</a></li>
             <li class="cart">
-                <a href="cart.jsp"><i></i></a></li>
+                <a href="cart.jsp"><i></i></a>
+            </li>
             <%}else{%>
             <li><a href="login.jsp">登录</a>/<a href="register.jsp">注册</a></li>
             <%}%>

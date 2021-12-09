@@ -32,8 +32,7 @@
         TypeImpl _ti = new TypeImpl();
         GoodsImpl gi = new GoodsImpl();
         PartitionImpl pi = new PartitionImpl();
-        List<Goods> test2 = new ArrayList<>();
-        test2 = gi.query();
+        List<Goods> goods = gi.query();
         List<Partition> par_li = pi.query();
         List<Type> typei = _ti.query();
     %>
@@ -49,17 +48,17 @@
             String parindex = request.getAttribute("parindex") == null ? "": (String) request.getAttribute("parindex");
             if(order!=null) {
                 if (order.equals("search")) {
-                    test2 = gi.findByIndex(index);
+                    goods = gi.findByIndex(index);
                 } else if (order.equals("type")) {
-                    test2 = gi.queryByType(typeindex);
+                    goods = gi.queryByType(typeindex);
                 } else if(order.equals("partition")){
-                    test2 = gi.queryByPartition(parindex);
+                    goods = gi.queryByPartition(parindex);
                 } else if(order.equals("advanced")){
-                    test2 = gi.advancedQuery(typeindex,parindex,index);
+                    goods = gi.advancedQuery(typeindex,parindex,index);
                 }
             }
             else{
-                test2 = gi.query();
+                goods = gi.query();
             }
         %>
         <div class="pro-list-filter">
@@ -110,7 +109,7 @@
         <div class="pro-list-box">
             <ul class="pro-list-pr">
                 <%
-                    for(Goods item : test2){
+                    for(Goods item : goods){
                 List<Partition> tmp_p = pi.findByIndex(item.getPartition_id());
                 Partition p = tmp_p.get(0);%>
                 <li>

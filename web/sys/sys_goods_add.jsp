@@ -18,6 +18,10 @@
 </head>
 <body>
 <%
+    if(request.getSession().getAttribute("admin?")==null){
+        response.sendRedirect("../sys");
+    }
+
     TypeImpl ti = new TypeImpl();
     PartitionImpl pi = new PartitionImpl();
     List<Type> tl = ti.query();

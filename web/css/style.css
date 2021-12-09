@@ -79,10 +79,24 @@ body header .inner .join .cart {
     display: block;
     height: 32px;
 }
+body header .inner .join .order {
+    position: relative;
+    padding: 30px 6px 20px 0;
+    display: block;
+    height: 32px;
+}
 
 body header .inner .join .cart i {
     background: url(../img/icon.png) no-repeat;
     background-position: -286px -76px;
+    background-size: 310px 120px;
+    height: 20px;
+    width: 25px;
+    display: block;
+}
+
+body header .inner .join .order i {
+    background: url(../img/order.png) no-repeat;
     background-size: 310px 120px;
     height: 20px;
     width: 25px;

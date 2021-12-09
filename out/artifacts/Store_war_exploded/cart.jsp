@@ -27,7 +27,6 @@
 }else{%>
 <div class="class-content-box" style="min-height: 216px;">
 <%--    <img style="align-items: center" src="img\child-cake-2.png">--%>
-    <h1>购物车</h1>
     <%
         CartImpl ci = new CartImpl();
         GoodsImpl gi = new GoodsImpl();

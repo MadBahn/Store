@@ -48,7 +48,38 @@ public class CartImpl implements CartDAO {
         return null;
     }
 
+    @Override
+    public List<Cart> displayItem() {
+        String sql = "SELECT * FROM cart";
+        try {
+            return qr.query(sql,new BeanListHandler<Cart>(Cart.class));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
+    @Override
+    public List<Cart> displayItem(String id) {
+        String sql = "SELECT * FROM cart WHERE cart_id = ?";
+        try {
+            return qr.query(sql,new BeanListHandler<Cart>(Cart.class),id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public List<Cart> displayProcess(User user) {
+        String sql = "SELECT * FROM cart WHERE user_id = ? AND (dealt != 'no' AND dealt != 'yes')";
+        try {
+            return qr.query(sql,new BeanListHandler<Cart>(Cart.class),user.getUser_id());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 
     @Override
@@ -68,7 +99,9 @@ public class CartImpl implements CartDAO {
             }
         } catch (SQLException e) {
         e.printStackTrace();
+        }
     }
-    }
+
+
 
 }

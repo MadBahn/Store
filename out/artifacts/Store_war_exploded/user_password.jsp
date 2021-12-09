@@ -26,9 +26,10 @@
         response.sendRedirect("login.jsp");
     }else{%>
 <div class="class-content-box" style="min-height: 216px;">
-    <h3>密码修改</h3>
-    <form action="" method="post">
-
+    <a href="index.jsp">返回主页</a>
+    <br><br>
+    <h>密码修改</h>
+    <form action="mo_pwd" method="post">
         <input type="hidden" value="<%=useri.getUser_id()%>">
         原密码：
         <input name="password" type="password"/>
@@ -39,6 +40,8 @@
         确认密码：
         <input name="c_n_password" type="password"/>
         <br />
+        <%=request.getAttribute("error")==null?"":request.getAttribute("error")%>
+        <br>
         <input type="submit" value="确定">
     </form>
 </div>
